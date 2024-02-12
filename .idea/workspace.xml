@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Updated Project Structure">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/login.css" afterDir="false" />
+    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Created Login Form">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/ClientMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/bank/maze/mazebank/client-menu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/client-menu.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/BankApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/BankApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/maze/mazebank/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/bank/maze/mazebank/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +20,7 @@
       <list>
         <option value="Class" />
         <option value="FxmlFile" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -45,20 +45,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="BankApplication" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.bank.maze.mazebank.BankApplication" />
@@ -78,7 +79,8 @@
       <updated>1707280049403</updated>
       <workItem from="1707280050470" duration="1802000" />
       <workItem from="1707365195898" duration="4144000" />
-      <workItem from="1707369385090" duration="120000" />
+      <workItem from="1707369385090" duration="472000" />
+      <workItem from="1707715737348" duration="4247000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Project Structure">
       <option name="closed" value="true" />
@@ -88,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707281834116</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created Login Form">
+      <option name="closed" value="true" />
+      <created>1707369756289</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707369756289</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,6 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated Project Structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Project Structure" />
+    <MESSAGE value="Created Login Form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Login Form" />
   </component>
 </project>
