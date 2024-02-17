@@ -1,0 +1,20 @@
+.transactions_controller{
+    -fx-background-color: #EEEEEE;
+}
+
+.transactions_controller Text{
+    -fx-fill: #000000;
+    -fx-font-size: 2.5em;
+    -fx-font-family: "Calibri Light";
+}
+
+.transactions_controller .list-view {
+    -fx-background-color: #EEEEEE;
+    -fx-padding: 10;
+}
+
+.transactions_controller .list-cell {
+    -fx-background-color: #EEEEEE;
+    -fx-pref-width: 800;
+}
+

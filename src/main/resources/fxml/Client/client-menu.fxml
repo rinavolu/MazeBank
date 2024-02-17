@@ -11,8 +11,8 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="750.0" prefWidth="180.0" styleClass="client_menu_container"
-      stylesheets="@../../../../styles/client-menu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-             fx:controller="com.bank.maze.mazebank.Controllers.Client.ClientMenuController">
+      stylesheets="@../../styles/client-menu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.bank.maze.mazebank.Controllers.Client.ClientMenuController">
    <children>
       <AnchorPane prefHeight="730.0" prefWidth="160.0" styleClass="left_container">
          <children>

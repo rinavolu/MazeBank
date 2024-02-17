@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Created Login Form">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/ClientMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/bank/maze/mazebank/client-menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/client-menu.css" afterDir="false" />
+    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Created Client left Pane">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/TransactionsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Client/client.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Client/dashboard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/transactions.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/BankApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/BankApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/ClientMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/ClientMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Views/ViewFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/maze/mazebank/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Admin/admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/maze/mazebank/client-menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Client/client-menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/maze/mazebank/client.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Client/transactions.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/maze/mazebank/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
         <option value="CSS File" />
       </list>
     </option>
@@ -51,6 +65,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
     "ignore.virus.scanning.warn.message": "true",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -60,6 +75,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ravindranadh Inavolu\OneDrive\Desktop\Project\Learn-JavaFX\mazebank\MazeBank\src\main\resources\fxml" />
+      <recent name="C:\Users\Ravindranadh Inavolu\OneDrive\Desktop\Project\Learn-JavaFX\mazebank\MazeBank\src\main\resources" />
+      <recent name="C:\Users\Ravindranadh Inavolu\OneDrive\Desktop\Project\Learn-JavaFX\mazebank\MazeBank\src\main\resources\Admin" />
+      <recent name="C:\Users\Ravindranadh Inavolu\OneDrive\Desktop\Project\Learn-JavaFX\mazebank\MazeBank\src\main\resources\Client" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="BankApplication" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.bank.maze.mazebank.BankApplication" />
@@ -80,7 +103,10 @@
       <workItem from="1707280050470" duration="1802000" />
       <workItem from="1707365195898" duration="4144000" />
       <workItem from="1707369385090" duration="472000" />
-      <workItem from="1707715737348" duration="4247000" />
+      <workItem from="1707715737348" duration="4507000" />
+      <workItem from="1708063299798" duration="1606000" />
+      <workItem from="1708096535172" duration="2982000" />
+      <workItem from="1708144995200" duration="6610000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Project Structure">
       <option name="closed" value="true" />
@@ -98,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707369756289</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Created Client left Pane">
+      <option name="closed" value="true" />
+      <created>1707723888434</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707723888434</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +141,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated Project Structure" />
     <MESSAGE value="Created Login Form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Login Form" />
+    <MESSAGE value="Created Client left Pane" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Client left Pane" />
   </component>
 </project>

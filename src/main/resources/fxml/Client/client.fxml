@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="client_parent" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.bank.maze.mazebank.Controllers.Client.ClientController">
+    <left>
+        <fx:include source="client-menu.fxml" />
+    </left>
+
+    <center>
+        <fx:include source="dashboard.fxml" />
+    </center>
+</BorderPane>
