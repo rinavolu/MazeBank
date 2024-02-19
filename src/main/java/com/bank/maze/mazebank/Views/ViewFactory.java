@@ -1,6 +1,5 @@
 package com.bank.maze.mazebank.Views;
 
-import com.bank.maze.mazebank.Controllers.Client.ClientController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +16,7 @@ public class ViewFactory {
     //Client Views
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
+    private AnchorPane accountsView;
 
     public ViewFactory(){
         this.userSelectedView = new SimpleStringProperty("");
@@ -75,7 +75,18 @@ public class ViewFactory {
         return dashboardView;
     }
 
-    public StringProperty userSelectedViewProperty() {
+    public AnchorPane getAccountsView(){
+        if(accountsView == null){
+            try{
+                accountsView = new FXMLLoader(getClass().getResource("/fxml/Client/accounts.fxml")).load();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return accountsView;
+    }
+
+    public StringProperty getUserSelectedViewProperty() {
         return userSelectedView;
     }
 }
