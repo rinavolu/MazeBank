@@ -1,5 +1,7 @@
 package com.bank.maze.mazebank.Views;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
@@ -11,15 +13,23 @@ import java.io.IOException;
 
 public class ViewFactory {
 
-    private StringProperty userSelectedView;
+    private AccountType loginAccountType;
+    private final ObjectProperty<ClientMenuOptions> userSelectedView;
 
     //Client Views
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
     private AnchorPane accountsView;
 
+    //Admin Views
+
+    private final ObjectProperty<AdminMenuOptions> adminSelectedView;
+    private AnchorPane createClientView;
+
     public ViewFactory(){
-        this.userSelectedView = new SimpleStringProperty("");
+        this.loginAccountType = AccountType.CLIENT;
+        this.userSelectedView = new SimpleObjectProperty<>();
+        this.adminSelectedView = new SimpleObjectProperty<>();
     }
 
 
@@ -32,6 +42,11 @@ public class ViewFactory {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Client/client.fxml"));
         /*ClientController clientController = new ClientController();
         loader.setController(clientController);*/
+        createStage(loader);
+    }
+
+    public void showAdminWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Admin/admin.fxml"));
         createStage(loader);
     }
 
@@ -86,7 +101,30 @@ public class ViewFactory {
         return accountsView;
     }
 
-    public StringProperty getUserSelectedViewProperty() {
+    public AnchorPane getCreateClientView(){
+        if(createClientView == null){
+            try{
+                createClientView = new FXMLLoader(getClass().getResource("/fxml/Admin/create-client.fxml")).load();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return createClientView;
+    }
+
+    public ObjectProperty<ClientMenuOptions> getUserSelectedViewProperty() {
         return userSelectedView;
+    }
+
+    public ObjectProperty<AdminMenuOptions> getAdminSelectedViewProperty() {
+        return adminSelectedView;
+    }
+
+    public AccountType getLoginAccountType() {
+        return loginAccountType;
+    }
+
+    public void setLoginAccountType(AccountType loginAccountType) {
+        this.loginAccountType = loginAccountType;
     }
 }

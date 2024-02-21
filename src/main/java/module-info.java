@@ -10,6 +10,7 @@ module com.bank.maze.mazebank {
     exports com.bank.maze.mazebank;
     exports com.bank.maze.mazebank.Controllers;
     exports com.bank.maze.mazebank.Controllers.Client;
+    exports com.bank.maze.mazebank.Controllers.Admin;
     exports com.bank.maze.mazebank.Models;
     exports com.bank.maze.mazebank.Views;
 }
