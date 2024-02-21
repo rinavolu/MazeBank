@@ -18,6 +18,7 @@ public class AdminController implements Initializable {
                 (observableValue, oldVal, newVal) -> {
                     switch (newVal) {
                         case CLIENTS -> admin_parent.setCenter(Model.getInstance().getViewFactory().getClientsListView());
+                        case DEPOSIT -> admin_parent.setCenter(Model.getInstance().getViewFactory().getDepositView());
                         default -> admin_parent.setCenter(Model.getInstance().getViewFactory().getCreateClientView());
                     }
                 }
