@@ -4,24 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Created Accounts View">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/AdminMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/CreateClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Views/AccountType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Views/AdminMenuOptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Views/ClientMenuOptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Admin/admin-menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Admin/create-client.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/admin-create-client.css" afterDir="false" />
+    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Create Admin Views">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/ClientsListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Admin/clients-list.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/clients-list.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/ClientMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/ClientMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/AdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/AdminMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Views/ViewFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Admin/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Admin/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/client-menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/client-menu.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +22,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
-        <option value="CSS File" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -111,7 +102,7 @@
       <workItem from="1708408403223" duration="179000" />
       <workItem from="1708408643002" duration="1153000" />
       <workItem from="1708416048346" duration="2537000" />
-      <workItem from="1708492042306" duration="1302000" />
+      <workItem from="1708492042306" duration="2134000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Project Structure">
       <option name="closed" value="true" />
@@ -153,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708322354806</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Create Admin Views">
+      <option name="closed" value="true" />
+      <created>1708493368590</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708493368590</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +164,7 @@
     <MESSAGE value="Created Client left Pane" />
     <MESSAGE value="Lecture 80  to 87" />
     <MESSAGE value="Created Accounts View" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Accounts View" />
+    <MESSAGE value="Create Admin Views" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Admin Views" />
   </component>
 </project>
