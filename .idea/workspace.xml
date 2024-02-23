@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Created deposit view">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/TransactionCellController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Client/TransactionCell.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/transactions-cell.css" afterDir="false" />
+    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Created Client Transaction Cell">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/ClientCellController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Admin/client-cell.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/client-list-cells.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/TransactionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Client/TransactionsController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +100,8 @@
       <workItem from="1708416048346" duration="2537000" />
       <workItem from="1708492042306" duration="2134000" />
       <workItem from="1708499478229" duration="2394000" />
-      <workItem from="1708514494114" duration="2576000" />
+      <workItem from="1708514494114" duration="2645000" />
+      <workItem from="1708663767072" duration="1529000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Project Structure">
       <option name="closed" value="true" />
@@ -167,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708502005918</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Created Client Transaction Cell">
+      <option name="closed" value="true" />
+      <created>1708517741992</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708517741992</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +190,7 @@
     <MESSAGE value="Create Admin Views" />
     <MESSAGE value="Create clients list view" />
     <MESSAGE value="Created deposit view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created deposit view" />
+    <MESSAGE value="Created Client Transaction Cell" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Client Transaction Cell" />
   </component>
 </project>
