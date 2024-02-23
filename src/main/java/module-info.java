@@ -13,4 +13,5 @@ module com.bank.maze.mazebank {
     exports com.bank.maze.mazebank.Controllers.Admin;
     exports com.bank.maze.mazebank.Models;
     exports com.bank.maze.mazebank.Views;
+    exports com.bank.maze.mazebank.DTO;
 }
