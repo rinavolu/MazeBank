@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Added Icon and disabled maximizing">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/AccountDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/CheckingAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/SavingsAccount.java" afterDir="false" />
+    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Added Accounts">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Database/DatabaseDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/ClientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/ClientDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/TransactionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/TransactionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +107,9 @@
       <workItem from="1708499478229" duration="2394000" />
       <workItem from="1708514494114" duration="2645000" />
       <workItem from="1708663767072" duration="5739000" />
-      <workItem from="1708755485393" duration="595000" />
+      <workItem from="1708755485393" duration="621000" />
+      <workItem from="1708966290045" duration="1539000" />
+      <workItem from="1709010036487" duration="3251000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Project Structure">
       <option name="closed" value="true" />
@@ -203,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708667825351</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added Accounts">
+      <option name="closed" value="true" />
+      <created>1708757035438</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708757035438</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +234,7 @@
     <MESSAGE value="Created ClientLisView cell designs @Admin pane" />
     <MESSAGE value="Created ClientCellController  @Admin and TransactionCellController&#10;  @Client" />
     <MESSAGE value="Added Icon and disabled maximizing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Icon and disabled maximizing" />
+    <MESSAGE value="Added Accounts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Accounts" />
   </component>
 </project>

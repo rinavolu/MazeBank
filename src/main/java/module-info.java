@@ -4,6 +4,7 @@ module com.bank.maze.mazebank {
     requires de.jensd.fx.glyphs.fontawesome;
     requires java.sql;
     requires org.postgresql.jdbc;
+    requires org.joda.time;
 
 
     opens com.bank.maze.mazebank to javafx.fxml;

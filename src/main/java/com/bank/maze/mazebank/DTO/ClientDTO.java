@@ -4,8 +4,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
-import java.time.LocalDate;
+import org.joda.time.LocalDate;
 
 public class ClientDTO {
 
@@ -20,7 +19,7 @@ public class ClientDTO {
 
     private final ObjectProperty<AccountDTO> savingsAccount;
 
-    private final ObjectProperty<LocalDate> creationDate;
+    private final ObjectProperty<org.joda.time.LocalDate> creationDate;
 
     public ClientDTO(String firstName,
                      String lastName,
@@ -33,7 +32,7 @@ public class ClientDTO {
         this.pAddress = new SimpleStringProperty(pAddress);
         this.checkingAccount = new SimpleObjectProperty<AccountDTO>(checkingAccount);
         this.savingsAccount = new SimpleObjectProperty<AccountDTO>(savingsAccount);
-        this.creationDate = new SimpleObjectProperty<LocalDate>(creationDate);
+        this.creationDate = new SimpleObjectProperty<org.joda.time.LocalDate>(creationDate);
     }
 
 
@@ -77,11 +76,11 @@ public class ClientDTO {
         return savingsAccount;
     }
 
-    public LocalDate getCreationDate() {
+    public org.joda.time.LocalDate getCreationDate() {
         return creationDate.get();
     }
 
-    public ObjectProperty<LocalDate> creationDateProperty() {
+    public ObjectProperty<org.joda.time.LocalDate> creationDateProperty() {
         return creationDate;
     }
 }
