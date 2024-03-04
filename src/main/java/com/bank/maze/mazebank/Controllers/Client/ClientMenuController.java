@@ -4,6 +4,7 @@ import com.bank.maze.mazebank.Models.Model;
 import com.bank.maze.mazebank.Views.ClientMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,6 +28,11 @@ public class ClientMenuController implements Initializable {
         dashboard_btn.setOnAction(event -> onDashBoard());
         transaction_btn.setOnAction(event -> onTransactions());
         account_btn.setOnAction(event -> onAccounts());
+        logout_btn.setOnAction(event -> {
+            Model.getInstance().resetLoginSession();
+            Model.getInstance().getViewFactory().closeStage((Stage) logout_btn.getScene().getWindow());
+            Model.getInstance().getViewFactory().showLoginWindow();
+        });
     }
 
     private void onTransactions() {

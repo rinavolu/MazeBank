@@ -119,4 +119,19 @@ public class Model {
             e.printStackTrace();
         }
     }
+
+
+    public void resetLoginSession(){
+
+        if(this.isAdminLoggedIn) {
+            this.isAdminLoggedIn = false;
+        }
+
+        if(this.isClientLoggedIn) {
+            this.isClientLoggedIn = false;
+            this.clientDTO = new ClientDTO("", "", "",
+                    null, null, null);
+        }
+
+    }
 }
