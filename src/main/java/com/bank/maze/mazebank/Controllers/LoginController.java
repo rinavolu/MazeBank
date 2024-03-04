@@ -19,6 +19,7 @@ public class LoginController implements Initializable {
     public TextField password_fld;
     public Label error_lbl;
     public Button login_btn;
+    public Label username_lbl;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -28,6 +29,12 @@ public class LoginController implements Initializable {
         account_selector.valueProperty().addListener(observable ->
                 Model.getInstance().getViewFactory().setLoginAccountType(account_selector.getValue()));
 
+        account_selector.setOnAction( event -> {
+            if(account_selector.getValue().equals(AccountType.ADMIN))
+                username_lbl.setText("Admin Address");
+            else
+                username_lbl.setText("Payee Address");
+        });
         login_btn.setOnAction(e -> onLogin());
     }
 
@@ -46,9 +53,16 @@ public class LoginController implements Initializable {
                 error_lbl.setText("Invalid Credentials !!! Please try again");
             }
         }
-        else {
-            Model.getInstance().getViewFactory().closeStage(stage);
-            Model.getInstance().getViewFactory().showAdminWindow();
+        if(Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.ADMIN) {
+            Model.getInstance().validateAdminCredentials(payee_address_fld.getText(),password_fld.getText());
+            if(Model.getInstance().isAdminLoggedIn()) {
+                Model.getInstance().getViewFactory().closeStage(stage);
+                Model.getInstance().getViewFactory().showAdminWindow();
+            }else{
+                payee_address_fld.setText("");
+                password_fld.setText("");
+                error_lbl.setText("Invalid Admin Credentials !!! Please try again");
+            }
         }
     }
 }

@@ -27,12 +27,14 @@ public class Model {
     private boolean isClientLoggedIn;
 
     //Admin
+    private boolean isAdminLoggedIn;
 
     private Model() {
         this.viewFactory = new ViewFactory();
         this.databaseDriver = new DatabaseDriver();
         this.clientDTO = new ClientDTO("","","",null,null,null);
         this.isClientLoggedIn = false;
+        this.isAdminLoggedIn = false;
     }
 
     public static synchronized Model getInstance(){
@@ -86,6 +88,31 @@ public class Model {
                 LocalDate localDate = dateTime.toLocalDate();
                 this.clientDTO.creationDateProperty().set(localDate);
                 this.isClientLoggedIn=true;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+    /*
+    * Admin Section
+    * */
+
+    public boolean isAdminLoggedIn() {
+        return isAdminLoggedIn;
+    }
+
+    public void setAdminLoggedIn(boolean adminLoggedIn) {
+        isAdminLoggedIn = adminLoggedIn;
+    }
+
+    public void validateAdminCredentials(String adminName, String adminPassword){
+        ResultSet resultSet = databaseDriver.getAdminData(adminName, adminPassword);
+        try{
+            if(resultSet.next()){
+                this.isAdminLoggedIn=true;
             }
 
         }catch (Exception e){
