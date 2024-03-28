@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Added logout flow">
+    <list default="true" id="e8b475f5-e9b0-46df-be18-3f36b3fb731b" name="Changes" comment="Added create Client login flow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/ClientCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/ClientCellController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/ClientsListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/ClientsListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/CreateClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Controllers/Admin/CreateClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/CheckingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/CheckingAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/ClientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/ClientDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/SavingsAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/DTO/SavingsAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Database/DatabaseDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Database/DatabaseDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/maze/mazebank/Models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Admin/client-list-cell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Admin/client-list-cell.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +121,7 @@
       <workItem from="1710737251767" duration="3528000" />
       <workItem from="1711522210986" duration="2102000" />
       <workItem from="1711534995395" duration="2860000" />
-      <workItem from="1711593113223" duration="917000" />
+      <workItem from="1711593113223" duration="5145000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Project Structure">
       <option name="closed" value="true" />
@@ -245,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709565571783</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added create Client login flow">
+      <option name="closed" value="true" />
+      <created>1711594067136</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1711594067136</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +282,8 @@
     <MESSAGE value="Created Client Login Flow using database" />
     <MESSAGE value="Created Admin Login Flow using database" />
     <MESSAGE value="Added logout flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added logout flow" />
+    <MESSAGE value="Added add Client login flow" />
+    <MESSAGE value="Added create Client login flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added create Client login flow" />
   </component>
 </project>

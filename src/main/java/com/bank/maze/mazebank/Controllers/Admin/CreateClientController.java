@@ -64,7 +64,7 @@ public class CreateClientController implements Initializable {
         String fName = first_name.getText();
         String lName = last_name.getText();
         String passwordStr = password.getText();
-        Model.getInstance().getDatabaseDriver().createClient(fName,lName,passwordStr, payeeAddress, LocalDate.now());
+        Model.getInstance().getDatabaseDriver().createClient(fName,lName, payeeAddress,passwordStr, LocalDate.now());
         error_lbl.setStyle("-fx-text-fill: blue; -fx-font-size: 1.3em; -fx-font-weight: bold");
         error_lbl.setText("Client Created Successfully");
         emptyFields();

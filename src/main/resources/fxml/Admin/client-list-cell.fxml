@@ -19,7 +19,7 @@
         <Label fx:id="pAddress" styleClass="acc_username" text="\@ravindra111"/>
         <Label fx:id="checkingAccountNumber" styleClass="acc_display_lbl" text="254699"/>
         <Label fx:id="savingsAccountNumber" styleClass="acc_display_lbl" text="233302013"/>
-        <Label fx:id="AccountCreatedDate" text="2024-02-2024"/>
+        <Label fx:id="accountCreatedDate" text="2024-02-2024"/>
     </HBox>
     <Button fx:id="userDeleteButton" layoutX="666.0" layoutY="12.0" mnemonicParsing="false" styleClass="delete_btn"
             text="Delete" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">

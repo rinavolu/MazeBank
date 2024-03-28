@@ -4,6 +4,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableValue;
 import org.joda.time.LocalDate;
 
 public class ClientDTO {
@@ -76,8 +77,8 @@ public class ClientDTO {
         return savingsAccount;
     }
 
-    public org.joda.time.LocalDate getCreationDate() {
-        return creationDate.get();
+    public ObservableValue<? extends String> getCreationDate() {
+        return new SimpleStringProperty(creationDate.get().toString());
     }
 
     public ObjectProperty<org.joda.time.LocalDate> creationDateProperty() {

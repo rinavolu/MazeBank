@@ -7,6 +7,8 @@ import com.bank.maze.mazebank.Database.DatabaseDriver;
 import com.bank.maze.mazebank.Views.AccountType;
 import com.bank.maze.mazebank.Views.ViewFactory;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
@@ -22,6 +24,8 @@ public class Model {
 
     private AccountType loginAccountType = AccountType.CLIENT;
 
+    private final ObservableList<ClientDTO> clients;
+
     //Client
     private ClientDTO clientDTO;
     private boolean isClientLoggedIn;
@@ -35,6 +39,7 @@ public class Model {
         this.clientDTO = new ClientDTO("","","",null,null,null);
         this.isClientLoggedIn = false;
         this.isAdminLoggedIn = false;
+        this.clients = FXCollections.observableArrayList();
     }
 
     public static synchronized Model getInstance(){
@@ -86,7 +91,11 @@ public class Model {
                 DateTimeFormatter FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd");
                 DateTime dateTime = FORMATTER.parseDateTime(resultSet.getString("creation_date"));
                 LocalDate localDate = dateTime.toLocalDate();
+                checkingAccount = getCheckingAccount(payeeAddress);
+                savingsAccount = getSavingsAccount(payeeAddress);
                 this.clientDTO.creationDateProperty().set(localDate);
+                this.clientDTO.savingsAccountProperty().set(savingsAccount);
+                this.clientDTO.checkingAccountProperty().set(checkingAccount);
                 this.isClientLoggedIn=true;
             }
 
@@ -120,6 +129,34 @@ public class Model {
         }
     }
 
+    public ObservableList<ClientDTO> getClients() {
+        return clients;
+    }
+
+    public void loadClients(){
+        setClients();
+    }
+
+    private void setClients(){
+        CheckingAccount checkingAccount;
+        SavingsAccount savingsAccount;
+        ResultSet resultSet = databaseDriver.getAllClients();
+        try{
+            while(resultSet.next()){
+                String fName = resultSet.getString("first_name");
+                String lName = resultSet.getString("last_name");
+                String payee_address = resultSet.getString("payee_address");
+                DateTimeFormatter FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd");
+                DateTime dateTime = FORMATTER.parseDateTime(resultSet.getString("creation_date"));
+                LocalDate localDate = dateTime.toLocalDate();
+                checkingAccount = getCheckingAccount(payee_address);
+                savingsAccount = getSavingsAccount(payee_address);
+                this.clients.add(new ClientDTO(fName,lName,payee_address,checkingAccount,savingsAccount,localDate));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     public void resetLoginSession(){
 
@@ -133,6 +170,41 @@ public class Model {
                     null, null, null);
         }
 
+    }
+
+    /*
+    * Utility Methods
+    * */
+    public CheckingAccount getCheckingAccount(String payeeAddress){
+        CheckingAccount account = null;
+        ResultSet resultSet = databaseDriver.getCheckingAccountData(payeeAddress);
+        try {
+            if(resultSet.next()) {
+                String num = resultSet.getString("account_number");
+                int tLimit = (int) resultSet.getFloat("transaction_limit");
+                Double balance = (double) resultSet.getFloat("balance");
+                account = new CheckingAccount(payeeAddress, num, balance, tLimit);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return account;
+    }
+
+    public SavingsAccount getSavingsAccount(String payeeAddress){
+        SavingsAccount account = null;
+        ResultSet resultSet = databaseDriver.getSavingsAccountData(payeeAddress);
+        try {
+            if(resultSet.next()) {
+                String num = resultSet.getString("account_number");
+                Double withdrawalLimit = (double) resultSet.getFloat("withdrawal_limit");
+                Double balance = (double) resultSet.getFloat("balance");
+                account = new SavingsAccount(payeeAddress, num, balance, withdrawalLimit);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return account;
     }
 
 

@@ -111,4 +111,46 @@ public class DatabaseDriver {
         }
         return id;
     }
+
+
+    public ResultSet getAllClients(){
+        Statement statement;
+        ResultSet resultSet =null;
+        try{
+            statement = this.conn.createStatement();
+            String sql = "SELECT * FROM CLIENTS";
+            resultSet = statement.executeQuery(sql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+
+     public ResultSet getCheckingAccountData(String payeeAddress){
+         Statement statement;
+         ResultSet resultSet =null;
+         try{
+             statement = this.conn.createStatement();
+             String sql = "SELECT * FROM checking_accounts WHERE acc_owner = '"+payeeAddress+ '\'';
+             resultSet = statement.executeQuery(sql);
+         }catch (Exception e){
+             e.printStackTrace();
+         }
+         return resultSet;
+     }
+
+
+    public ResultSet getSavingsAccountData(String payeeAddress){
+        Statement statement;
+        ResultSet resultSet =null;
+        try{
+            statement = this.conn.createStatement();
+            String sql = "SELECT * FROM savings_accounts WHERE acc_owner = '"+payeeAddress+ '\'';
+            resultSet = statement.executeQuery(sql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
 }

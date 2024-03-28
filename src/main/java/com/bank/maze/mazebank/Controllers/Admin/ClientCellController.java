@@ -14,7 +14,7 @@ public class ClientCellController implements Initializable {
     public Label pAddress;
     public Label checkingAccountNumber;
     public Label savingsAccountNumber;
-    public Label AccountCreatedDate;
+    public Label accountCreatedDate;
     public Button userDeleteButton;
 
     private final ClientDTO clientDTO;
@@ -26,6 +26,11 @@ public class ClientCellController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        firstName.textProperty().bind(clientDTO.firstNameProperty());
+        lastName.textProperty().bind(clientDTO.lastNameProperty());
+        pAddress.textProperty().bind(clientDTO.pAddressProperty());
+        checkingAccountNumber.textProperty().bind(clientDTO.checkingAccountProperty().asString());
+        savingsAccountNumber.textProperty().bind(clientDTO.savingsAccountProperty().asString());
+        accountCreatedDate.textProperty().bind(clientDTO.getCreationDate());
     }
 }

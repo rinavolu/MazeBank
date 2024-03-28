@@ -19,4 +19,9 @@ public class SavingsAccount extends AccountDTO{
     public DoubleProperty withdrawalLimitProperty() {
         return withdrawalLimit;
     }
+
+    @Override
+    public String toString(){
+        return accountNumberProperty().get();
+    }
 }
