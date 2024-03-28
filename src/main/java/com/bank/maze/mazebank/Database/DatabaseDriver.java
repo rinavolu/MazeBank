@@ -1,5 +1,7 @@
 package com.bank.maze.mazebank.Database;
 
+import org.joda.time.LocalDate;
+
 import java.sql.*;
 
 public class DatabaseDriver {
@@ -51,4 +53,62 @@ public class DatabaseDriver {
         return resultSet;
     }
 
+    //Create Client @Admin
+
+    public void createClient(String fName, String lName, String pAddress, String password, LocalDate date){
+        Statement statement;
+        try{
+            statement = this.conn.createStatement();
+            String createClientSql = ("INSERT INTO clients (first_name, last_name, payee_address, " +
+                    "payee_password, creation_date) VALUES('%s','%s','%s','%s','%s' )")
+                    .formatted(fName, lName, pAddress, password, date.toString());
+            statement.executeUpdate(createClientSql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+    public void createCheckingAccount(String owner, String accountNumber, Double transactionLimit , Double balance){
+        Statement statement;
+        try{
+            statement = this.conn.createStatement();
+            String createClientSql = ("INSERT INTO checking_accounts (acc_owner, account_number, transaction_limit, balance) " +
+                    "VALUES('%s','%s','%s','%s')")
+                    .formatted(owner, accountNumber, transactionLimit, balance);
+            statement.executeUpdate(createClientSql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void createSavingsAccount(String owner, String accountNumber, Double withdrawalLimit, Double balance){
+        Statement statement;
+        try{
+            statement = this.conn.createStatement();
+            String createClientSql = ("INSERT INTO savings_accounts (acc_owner, account_number, withdrawal_limit, balance)" +
+                    " VALUES('%s','%s','%s','%s')")
+                    .formatted(owner, accountNumber, withdrawalLimit, balance);
+            System.out.println(createClientSql);
+            statement.executeUpdate(createClientSql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+    public Integer getLastClientId(){
+        Integer id=null;
+        Statement statement;
+        ResultSet resultSet;
+        try{
+            statement = this.conn.createStatement();
+            String sql = "SELECT id FROM clients ORDER BY ID DESC LIMIT 1";
+            resultSet = statement.executeQuery(sql);
+            if(resultSet.next()) id=  resultSet.getInt("id");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return id;
+    }
 }

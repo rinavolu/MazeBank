@@ -134,4 +134,9 @@ public class Model {
         }
 
     }
+
+
+    public DatabaseDriver getDatabaseDriver() {
+        return databaseDriver;
+    }
 }
