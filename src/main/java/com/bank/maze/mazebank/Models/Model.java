@@ -208,6 +208,27 @@ public class Model {
     }
 
 
+    public ObservableList<ClientDTO> searchClient(String payee_address){
+        ObservableList<ClientDTO> searchResults = FXCollections.observableArrayList();
+        try{
+            ResultSet resultSet = databaseDriver.searchClient(payee_address);
+            while(resultSet.next()){
+                CheckingAccount checkingAccount = getCheckingAccount(payee_address);
+                SavingsAccount savingsAccount = getSavingsAccount(payee_address);
+                String fName = resultSet.getString("first_name");
+                String lName = resultSet.getString("last_name");
+                DateTimeFormatter FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd");
+                DateTime dateTime = FORMATTER.parseDateTime(resultSet.getString("creation_date"));
+                LocalDate localDate = dateTime.toLocalDate();
+                searchResults.add(new ClientDTO(fName,lName,payee_address,checkingAccount,savingsAccount,localDate));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return searchResults;
+    }
+
+
     public DatabaseDriver getDatabaseDriver() {
         return databaseDriver;
     }

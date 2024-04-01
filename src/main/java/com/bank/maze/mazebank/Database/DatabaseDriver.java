@@ -153,4 +153,29 @@ public class DatabaseDriver {
         }
         return resultSet;
     }
+
+    public ResultSet searchClient(String payeeAddress){
+        Statement statement;
+        ResultSet resultSet =null;
+        try{
+            statement = this.conn.createStatement();
+            String sql = "SELECT * FROM clients WHERE payee_address = '"+payeeAddress+ '\'';
+            resultSet = statement.executeQuery(sql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+
+    public void depositSavings(String payee_address,String amount){
+        Statement statement;
+        try{
+            statement = this.conn.createStatement();
+            String sql = "UPDATE savings_accounts SET balance = "+amount+" WHERE acc_owner = '"+payee_address+ '\'';
+            statement.executeUpdate(sql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
