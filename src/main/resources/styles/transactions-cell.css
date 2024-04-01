@@ -38,3 +38,15 @@
 .trans_amount_lbl FontAwesomeIconView {
     -fx-fill: #FFFFFF;
 }
+
+.message_btn{
+    -fx-background-color: #FFFFFF;
+}
+
+.message_btn FontAwesomeIconView{
+    -fx-background-color: #132A13;
+}
+
+.message_btn:hover{
+    -fx-cursor: hand;
+}

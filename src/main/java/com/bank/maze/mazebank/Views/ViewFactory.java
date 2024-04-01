@@ -5,9 +5,15 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -53,6 +59,25 @@ public class ViewFactory {
     public void showAdminWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Admin/admin.fxml"));
         createStage(loader);
+    }
+
+    public void showMessageWindow(String pAddress, String messageText){
+        StackPane pane = new StackPane();
+        HBox hbox = new HBox(5);
+        hbox.setAlignment(Pos.CENTER);
+        Label sender = new Label(pAddress);
+        Label message = new Label(messageText);
+        hbox.getChildren().addAll(sender,message);
+        pane.getChildren().add(hbox);
+        Scene scene= new Scene(pane, 300, 100);
+        Stage stage= new Stage();
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/images/app-icon.png"))));
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Message");
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     private void createStage(FXMLLoader loader) {

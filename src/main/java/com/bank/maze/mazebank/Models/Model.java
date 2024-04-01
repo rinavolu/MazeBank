@@ -3,6 +3,7 @@ package com.bank.maze.mazebank.Models;
 import com.bank.maze.mazebank.DTO.CheckingAccount;
 import com.bank.maze.mazebank.DTO.ClientDTO;
 import com.bank.maze.mazebank.DTO.SavingsAccount;
+import com.bank.maze.mazebank.DTO.TransactionDTO;
 import com.bank.maze.mazebank.Database.DatabaseDriver;
 import com.bank.maze.mazebank.Views.AccountType;
 import com.bank.maze.mazebank.Views.ViewFactory;
@@ -14,6 +15,8 @@ import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Model {
 
@@ -30,6 +33,10 @@ public class Model {
     private ClientDTO clientDTO;
     private boolean isClientLoggedIn;
 
+    private ObservableList<TransactionDTO> latestTransactions;
+
+    private ObservableList<TransactionDTO> allTransactions;
+
     //Admin
     private boolean isAdminLoggedIn;
 
@@ -40,6 +47,8 @@ public class Model {
         this.isClientLoggedIn = false;
         this.isAdminLoggedIn = false;
         this.clients = FXCollections.observableArrayList();
+        this.latestTransactions = FXCollections.observableArrayList();
+        this.allTransactions = FXCollections.observableArrayList();
     }
 
     public static synchronized Model getInstance(){
@@ -102,6 +111,44 @@ public class Model {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private void loadTransactions(){
+        loadLatestTransactions();
+        loadAllTransactions();
+    }
+
+    private void loadLatestTransactions(){
+        ResultSet latestTransResultSet = databaseDriver.getTransactions(clientDTO.getpAddress(), 4);
+        if(latestTransactions!=null&&!latestTransactions.isEmpty()) latestTransactions.clear();
+        latestTransactions.addAll(getTransactionDTOs(latestTransResultSet));
+    }
+
+    private void loadAllTransactions(){
+        ResultSet transactionsResultSet = databaseDriver.getTransactions(clientDTO.getpAddress(), -1);
+        if(allTransactions!=null&&!allTransactions.isEmpty()) allTransactions.clear();
+        allTransactions.addAll(getTransactionDTOs(transactionsResultSet));
+    }
+
+    private List<TransactionDTO> getTransactionDTOs(ResultSet resultSet){
+        List<TransactionDTO> transactions = new ArrayList<>();
+        try {
+            while (resultSet.next()) {
+                TransactionDTO transactionDTO;
+                String senderAddress = resultSet.getString("sender");
+                String receiverAddress = resultSet.getString("receiver");
+                Double amount = resultSet.getDouble("amount");
+                DateTimeFormatter FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd");
+                DateTime dateTime = FORMATTER.parseDateTime(resultSet.getString("creation_date"));
+                LocalDate transactionDate = dateTime.toLocalDate();
+                String message = resultSet.getString("message");
+                transactionDTO = new TransactionDTO(senderAddress,receiverAddress,amount,transactionDate,message);
+                transactions.add(transactionDTO);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return transactions;
     }
 
 
@@ -231,5 +278,23 @@ public class Model {
 
     public DatabaseDriver getDatabaseDriver() {
         return databaseDriver;
+    }
+
+
+    public ObservableList<TransactionDTO> getLatestTransactions() {
+        return latestTransactions;
+    }
+
+    public ObservableList<TransactionDTO> getAllTransactions() {
+        return allTransactions;
+    }
+
+
+    public void setLatestTransactions() {
+        loadLatestTransactions();
+    }
+
+    public void setAllTransactions() {
+        loadAllTransactions();
     }
 }

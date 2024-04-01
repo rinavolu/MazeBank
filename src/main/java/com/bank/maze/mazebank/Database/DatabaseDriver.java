@@ -178,4 +178,78 @@ public class DatabaseDriver {
             e.printStackTrace();
         }
     }
+
+
+    public ResultSet getTransactions(String payeeAddress,int limit){
+        Statement statement;
+        ResultSet resultSet =null;
+        try{
+            statement = this.conn.createStatement();
+            String sql;
+
+            if(limit>=0) {
+                sql = "SELECT * FROM transactions WHERE sender = '" + payeeAddress + '\''
+                        + " or receiver = '" + payeeAddress + '\'' + " ORDER BY CREATION_DATE DESC LIMIT " + limit;
+            }else{
+                sql = "SELECT * FROM transactions WHERE sender = '" + payeeAddress + '\''
+                        + " or receiver = '" + payeeAddress + '\'' + " ORDER BY CREATION_DATE DESC ";
+            }
+
+            resultSet = statement.executeQuery(sql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+
+    public void updateBalance(String payee_address, double amount){
+        Statement statement;
+        try{
+            statement = this.conn.createStatement();
+            String sql;
+            //String sql = "UPDATE savings_accounts SET balance = "+amount+" WHERE acc_owner = '"+payee_address+ '\'';
+            sql= "with subquery as (" +
+                    "select * from savings_accounts) update savings_accounts set balance = "+amount+" + subquery.balance\n" +
+                    "from subquery where savings_accounts.acc_owner = subquery.acc_owner and subquery.acc_owner= '"+payee_address+'\'';
+            statement.executeUpdate(sql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public Double getSavingsAccountBalance(String payee_address){
+        Statement statement;
+        ResultSet resultSet;
+        //Double balance;
+        try{
+            statement = this.conn.createStatement();
+            String sql = "SELECT * FROM savings_accounts WHERE payee_address = '"+payee_address+ '\'';
+            resultSet = statement.executeQuery(sql);
+            if(resultSet.next()) return resultSet.getDouble("balance");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //New transaction
+    public void commitTransaction(String sender, String receiver, Double amount, String message){
+        Statement statement;
+        try{
+            statement = this.conn.createStatement();
+            String sql= "INSERT INTO TRANSACTIONS( sender, receiver, amount, creation_date, message) VALUES (" +
+                    "'"+sender+"', " +
+                    "'"+receiver+"', " +
+                    " "+amount+"," +
+                    "'"+LocalDate.now()+"', " +
+                    "'"+message+"'" +
+                    ")";
+            statement.executeUpdate(sql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
 }

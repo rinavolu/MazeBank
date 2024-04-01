@@ -1,8 +1,8 @@
 package com.bank.maze.mazebank.DTO;
 
 import javafx.beans.property.*;
+import org.joda.time.LocalDate;
 
-import java.time.LocalDate;
 
 public class TransactionDTO {
 
